@@ -17,13 +17,15 @@ To provide a step-by-step guide in your README file for someone who has cloned y
    DATABASE_USERNAME=user_name (unique field)
    DATABASE_NAME=database_name (unique field)
    ```
+   
+3. Also make sure to copy `data.csv` file in the root folder before migration.
 
-3. Set Up the Database:
+4. Set Up the Database:
    - Ensure PostgreSQL is installed and running on your local machine.
    - Create a new PostgreSQL database.
    - Update the database connection details in the `.env` file, you have created in step 2.
 
-4. Install Dependencies:
+5. Install Dependencies:
    - Navigate to the project's root directory.
    - Create and activate a virtual environment (optional but recommended).
    - Install the project's dependencies:
@@ -31,20 +33,20 @@ To provide a step-by-step guide in your README file for someone who has cloned y
      pip install -r requirements.txt
      ```
 
-5. Run Initial Migration:
+6. Run Initial Migration:
    - Apply the migration to create the necessary tables in the database:
      ```
      alembic upgrade head
      ```
 
-6. Migrate the Data:
+7. Migrate the Data:
    - Ensure the `data.csv` file is located in the project's root directory.
    - Run the migration script to move the data from `data.csv` to the database:
      ```
      python migrate.py
      ```
 
-7. Verify the Migration:
+8. Verify the Migration:
    - Connect to your PostgreSQL database using a client tool or command-line interface.
    - Verify that the data from `data.csv` has been successfully migrated into the corresponding table.
 
