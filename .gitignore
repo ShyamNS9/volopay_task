@@ -1,0 +1,7 @@
+venv4vaolpay
+__pycache__
+.idea
+.env
+
+
+/data.csv
