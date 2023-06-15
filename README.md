@@ -50,5 +50,44 @@ To provide a step-by-step guide in your README file for someone who has cloned y
    - Connect to your PostgreSQL database using a client tool or command-line interface.
    - Verify that the data from `data.csv` has been successfully migrated into the corresponding table.
 
+9. Run the Project with following command:
+   ```
+   uvicorn app.main:app --reload
+   ```
 
-  NOTE: Postman file is added to the project itself.
+10. Open postman and import the file `Volopay Task.postman_collection`
+    - Run the api you want to get the data for the hints is added in all the apis
+
+
+**NOTE: Postman file is added to the project itself.**
+  
+### Project Structure
+
+   ```
+   volopay_task/
+      ├── .env
+      ├── .gitignore
+      ├── alembic/
+      │   ├── env.py
+      │   ├── README
+      │   ├── script.py.mako
+      │   └── versions/
+      │       ├── 2d3622f9fe21_create_initial_tables.py
+      │       └── aebc0ff954ac_add_data_migration.py
+      ├── alembic.ini
+      ├── app/
+      │   ├── __init__.py
+      │   ├── config.py
+      │   ├── database.py
+      │   ├── main.py
+      │   ├── models.py
+      │   ├── routes/
+      │   │   └── volopay_task.py
+      │   └── schemas.py
+      ├── data.csv
+      ├── migration.py
+      ├── README.md
+      ├── requirements.txt
+      ├── trial.py
+      └── Volopay Task.postman_collection
+   ```
