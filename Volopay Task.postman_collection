@@ -7,23 +7,11 @@
 	"item": [
 		{
 			"name": "total_items",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"start_date\": \"2022-07-15T12:01:14.723Z\",\r\n  \"end_date\": \"2022-09-15T12:01:14.723Z\",\r\n  \"department\": \"HR\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/total_items",
+					"raw": "http://127.0.0.1:8000/api/total_items?start_date=2022-07-15&end_date=2022-09-15&department=HR",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -35,6 +23,23 @@
 					"path": [
 						"api",
 						"total_items"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2022-07-15",
+							"description": "Enter starting date here as YYYY-MM-DD"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-09-15",
+							"description": "Enter ending date here as YYYY-MM-DD"
+						},
+						{
+							"key": "department",
+							"value": "HR",
+							"description": "Enter department like 'HR'"
+						}
 					]
 				}
 			},
@@ -42,23 +47,11 @@
 		},
 		{
 			"name": "nth_most_total_item",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"start_date\": \"2022-07-15T12:01:14.723Z\",\r\n  \"end_date\": \"2022-09-15T12:01:14.723Z\",\r\n  \"item_by\": \"quantity\",\r\n  \"n\": 1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/nth_most_total_item",
+					"raw": "http://127.0.0.1:8000/api/nth_most_total_item?start_date=2022-07-15&end_date=2022-09-15&item_by=quantity&n=1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -70,30 +63,40 @@
 					"path": [
 						"api",
 						"nth_most_total_item"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2022-07-15",
+							"description": "Enter starting date here as YYYY-MM-DD"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-09-15",
+							"description": "Enter ending date here as YYYY-MM-DD"
+						},
+						{
+							"key": "item_by",
+							"value": "quantity",
+							"description": "Enter How you want to sort the data like 'quantity' **OR** 'price'"
+						},
+						{
+							"key": "n",
+							"value": "1",
+							"description": "In descending order what ranked item you want to fetch"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "percentage_of_department_wise_sold_items",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "monthly_sales",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"product\": \"Google\",\r\n  \"year\": 2022\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/monthly_sales",
+					"raw": "http://127.0.0.1:8000/api/monthly_sales?product=Google&year=2022",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -105,30 +108,30 @@
 					"path": [
 						"api",
 						"monthly_sales"
+					],
+					"query": [
+						{
+							"key": "product",
+							"value": "Google",
+							"description": "Enter the product name you want to fetch like 'Apple'"
+						},
+						{
+							"key": "year",
+							"value": "2022",
+							"description": "Enter for what year you want to fetch like 'YYYY'"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "monthly_sales",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
+			"name": "percentage_of_department_wise_sold_items",
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"start_date\": \"2022-07-15T12:14:10.376Z\",\r\n  \"end_date\": \"2022-09-15T12:14:10.376Z\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/percentage_of_department_wise_sold_items",
+					"raw": "http://127.0.0.1:8000/api/percentage_of_department_wise_sold_items?start_date=2022-07-15&end_date=2022-09-15",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -140,6 +143,18 @@
 					"path": [
 						"api",
 						"percentage_of_department_wise_sold_items"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2022-07-15",
+							"description": "Enter starting date here as YYYY-MM-DD"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-09-15",
+							"description": "Enter ending date here as YYYY-MM-DD"
+						}
 					]
 				}
 			},
