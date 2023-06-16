@@ -1,6 +1,4 @@
-from pydantic import BaseModel, EmailStr
-from typing import Optional
-from pydantic.types import conint
+from pydantic import BaseModel
 from pydantic.validators import datetime
 
 
@@ -10,6 +8,13 @@ class TotalItem(BaseModel):
     department: str
 
 
+class ResponseTotalItem(BaseModel):
+    total_items: int
+
+    class Config:
+        orm_mode = True
+
+
 class NthTotalItem(BaseModel):
     start_date: datetime
     end_date: datetime
@@ -17,11 +22,32 @@ class NthTotalItem(BaseModel):
     n: int
 
 
+class ResponseNthTotalItem(BaseModel):
+    nth_most_total_item: str
+
+    class Config:
+        orm_mode = True
+
+
 class PercentageSold(BaseModel):
     start_date: datetime
     end_date: datetime
 
 
+class ResponsePercentageSold(BaseModel):
+    percentage_of_department_wise_sold_items: dict
+
+    class Config:
+        orm_mode = True
+
+
 class MonthlySale(BaseModel):
-    product: str
+    product: str = "Apple"
     year: int
+
+
+class ResponseMonthlySale(BaseModel):
+    monthly_sales: list
+
+    class Config:
+        orm_mode = True
